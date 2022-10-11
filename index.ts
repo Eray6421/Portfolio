@@ -1,14 +1,15 @@
 // Discord Client Configurations
 
-import { Client } from 'discord.js'
+import DiscordConfig from './config/discord.ts'
 
-const myClient = new Client ({
-    intents: 131071
+const Client = DiscordConfig (process.env.DISCORD_CLIENT_TOKEN)
+
+Client.on ('ready', Client => {
+    
 })
-
-myClient.login (process.env.DISCORD_CLIENT_TOKEN)
 
 // Web App Configurations
 
-import Express from 'express'
+import ExpressConfig from './config/express.ts'
 
+ExpressConfig ()
